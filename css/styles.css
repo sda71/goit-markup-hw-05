@@ -571,8 +571,8 @@ body {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 1;
-  visibility: 250ms var(--transition-func);
-  transition: opacity 250ms var(--transition-func);
+  visibility: 250ms var(--transition-func) 250ms;
+  transition: opacity 250ms var(--transition-func) 250ms;
 }
 .modal {
   position: absolute;
