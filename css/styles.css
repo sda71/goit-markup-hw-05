@@ -219,12 +219,12 @@ body {
   border-radius: 2px;
 }
 .contacts {
-  transition: color 250ms var(--transition-func);
 }
 .site-contacts .link {
   font-size: 16px;
   line-height: 1.5;
   color: var(--primary-text-color);
+  transition: color 250ms var(--transition-func);
 }
 
 .nav-title:hover,
@@ -502,12 +502,10 @@ body {
 
 .card-link {
   display: block;
-  transition: border-color 250ms var(--transition-func),
-    box-shadow 250ms var(--transition-func);
+  transition: box-shadow 250ms var(--transition-func);
 }
 .card-link:hover,
 .card-link:focus {
-  border: 0.5px solid #f4f4fd;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -543,7 +541,8 @@ body {
   overflow: hidden;
 }
 
-.card-item:hover .card-overlay {
+.card-link:hover .card-overlay,
+.card-link:focus .card-overlay {
   transform: translateY(0);
 }
 .card-overlay {
@@ -571,8 +570,9 @@ body {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 1;
-  visibility: 250ms var(--transition-func) 100ms;
-  transition: opacity 250ms var(--transition-func) 100ms;
+  /* visibility: 250ms var(--transition-func); */
+  transition: opacity 250ms var(--transition-func),
+    visibility 250ms var(--transition-func);
 }
 .modal {
   position: absolute;
@@ -608,4 +608,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 250ms var(--transition-func),
+    color 250ms var(--transition-func);
+}
+
+.modal-btn:is(:hover, :focus) {
+  background-color: var(--accent-color);
+  fill: #ffffff;
+  border: none;
 }
